@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <DynamicThresholdFilter key="X-B3-Flags-Debug" onMatch="ACCEPT" defaultThreshold="warn" onMismatch="NEUTRAL">
+        <KeyValuePair key="true" value="trace"/>
+    </DynamicThresholdFilter>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <JSONLayout compact="true" objectMessageAsJsonObject="true" eventEol="true" properties="true"
+                        stacktraceAsString="true" includeTimeMillis="true"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

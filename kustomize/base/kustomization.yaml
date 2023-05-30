@@ -1,0 +1,12 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - secret-provider.yaml
+  - config-map.yaml
+  - secrets-service-account.yaml
+  - service.yaml
+  - ingress-internal.yaml
+  - service-monitor.yaml
+  - deployment.yaml
+  - hpa.yaml

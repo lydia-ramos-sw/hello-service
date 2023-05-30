@@ -1,0 +1,8 @@
+# This file contains only environment dependant configuration.
+# To configure shared parameters use src/main/resources/application.yml instead.
+
+
+---
+spring:
+  datasource:
+    url: aurora-jdbc-url-goes-here

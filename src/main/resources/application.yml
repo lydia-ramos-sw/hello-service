@@ -1,0 +1,65 @@
+---
+spring:
+  application:
+    name: hello-service
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    username: su
+    password: "${RDS_PASSWORD}"
+    hikari:
+      idle-timeout: 600000
+      pool-name: hello-service-pool
+      auto-commit: true
+      connection-timeout: 2000
+      maximum-pool-size: 8
+server:
+  port: 8080
+springdoc:
+  api-docs:
+    path: /api-docs
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: '*'
+  info:
+    git:
+      mode: full
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoint:
+    env:
+      enabled: true
+    mappings:
+      enabled: true
+    health:
+      enabled: true
+      probes:
+        enabled: true
+      show-details: ALWAYS
+    beans:
+      enabled: true
+    configprops:
+      enabled: true
+    threaddump:
+      enabled: true
+    info:
+      enabled: true
+    conditions:
+      enabled: true
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+  executor-type: REUSE
+  configuration:
+    cache-enabled: false
+    safe-result-handler-enabled: false

@@ -1,0 +1,9 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app: hello-service
+  name: hello-ingress-internal
+  namespace: development-services
+spec: null

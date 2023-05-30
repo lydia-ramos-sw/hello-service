@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-service
+  name: hello-service
+spec:
+  selector:
+    matchLabels:
+      app: hello-service
+  template:
+    metadata:
+      labels:
+        app: hello-service
+    spec:
+      containers:
+        - name: hello
+          env:
+            - name: JAVA_TOOL_OPTIONS
+              value: -Xms128m -Xmx128m

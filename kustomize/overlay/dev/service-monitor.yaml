@@ -1,0 +1,13 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    instance: swfs-grafana-agent
+  name: hello-service-monitor
+  namespace: development-services
+spec:
+  selector:
+    matchLabels:
+      app: hello-service
+      app.kubernetes.io/instance: hello-service-dev
