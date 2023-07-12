@@ -5,17 +5,17 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: org.postgresql.Driver
-    username: su
-    password: "${RDS_PASSWORD}"
-    hikari:
-      idle-timeout: 600000
-      pool-name: hello-service-pool
-      auto-commit: true
-      connection-timeout: 2000
-      maximum-pool-size: 8
+  #datasource:
+    #type: com.zaxxer.hikari.HikariDataSource
+    #driver-class-name: org.postgresql.Driver
+    #username: su
+    #password: "${RDS_PASSWORD}"
+    #hikari:
+      #idle-timeout: 600000
+      #pool-name: hello-service-pool
+      #auto-commit: true
+      #connection-timeout: 2000
+      #maximum-pool-size: 8
 server:
   port: 8080
 springdoc:
@@ -63,3 +63,22 @@ mybatis:
   configuration:
     cache-enabled: false
     safe-result-handler-enabled: false
+
+hello:
+  grants-operation-get[0]: A
+  grants-operation-get[1]: B
+  grants-operation-get[2]: C
+  grants-operation-get[3]: D
+  grants-operation-get[4]: E
+  grants-operation-update[0]: A
+  grants-operation-update[1]: B
+  grants-operation-create[0]: A
+  grants-operation-create[1]: B
+  grants-operation-create[2]: C
+  items-higher-grants[0]: 99
+  items-not-available[0]: 100
+  items-not-available[1]: 114
+  items-not-available[2]: 1120
+  items-fatal[0]: 11
+  items-fatal[1]: 13
+  items-can-not-be-created[0]: 14
